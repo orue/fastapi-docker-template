@@ -4,7 +4,21 @@ from fastapi import Depends, FastAPI
 
 from app.config import Settings, get_settings
 
-app = FastAPI()
+description = """
+Boilerplate Project.
+ 
+## Technology
+- FastAPI
+- Docker
+- MongoDB  
+"""
+
+app = FastAPI(title="FastAPI Template",
+              description=description,
+              contact={
+                  "name": "Carlos Orue",
+                  "url": "https://orue.io"
+              })
 
 
 @app.get("/ping")
